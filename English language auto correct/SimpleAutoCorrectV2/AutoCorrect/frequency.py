@@ -3,7 +3,7 @@
 import json
 import os
 import re
-from collections import Counter
+from collections import Counter, OrderedDict
 
 """
 ---sample usage---
@@ -45,13 +45,14 @@ def load_freq_dict_from_file(freq_dict_file_path, text_corpus_file_path):
         with open(freq_dict_file_path, 'r', encoding='utf-8') as f:
             # convert loaded dict values back to int
             frequency_dict = {word: int(count) for word, count in json.load(f).items()}
-
         return frequency_dict
     else:
         # if the frequency_dict_file is not in the path make a dict
         frequency_dict = load_corpus(text_corpus_file_path)
+        # sort the frequency dictionary
+        ordered_frequency_dict = OrderedDict(sorted(frequency_dict.items(), key=lambda x: x[1], reverse=True))
         # and save the corpus into the output.json
         with open(freq_dict_file_path, 'w', encoding='utf-8') as f:
-            json.dump(frequency_dict, f)
+            json.dump(ordered_frequency_dict, f, ensure_ascii=False)
 
         return frequency_dict
