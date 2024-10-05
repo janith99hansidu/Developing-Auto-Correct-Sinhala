@@ -16,11 +16,15 @@ class Speller:
         # otherwise check for candidates
         if word in self.frequency_dict:
             return []
-        return [candidate for candidate in Word(word).candidates() if candidate in self.frequency_dict]
+        return sorted([(candidate, self.frequency_dict[candidate])
+                       for candidate in Word(word).candidates()
+                       if candidate in self.frequency_dict],
+                      key=lambda x: x[1],
+                      reverse=True)
 
 
 if __name__ == '__main__':
     speller = Speller()
     print('input a word: ')
-    word = input()
+    word = input().lower()
     print("possible corrections :", speller.get_candidates(word))
