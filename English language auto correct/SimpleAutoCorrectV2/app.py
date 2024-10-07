@@ -21,4 +21,4 @@ def run_function():
     return render_template('index.html', corrected_text=corrected_text)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
