@@ -25,11 +25,5 @@ class Speller:
                       reverse=True)[:self.threshold]
 
 
-if __name__ == '__main__':
-    speller = Speller(threshold=1)
-    print('input a word: ')
-    word = input().lower()
 
-    data = speller.get_candidates(word)
-    print("possible corrections :", data)
 

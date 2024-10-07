@@ -1,121 +1,42 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #a09f87;
-    color: #333;
-    padding: 40px;
-}
-
 header {
-    background-color: #004080;
+    background-color: #07325d;
     color: white;
     padding: 20px;
     text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
 }
 
-
-header h1 {
-    font-size: 2.5em;
-}
-
-nav {
-    margin-top: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    padding: 10px 20px;
-}
-
-nav ul li a:hover {
-    background-color: #0059b3;
-    border-radius: 5px;
-}
-
-/* Language dropdown styling */
 .language-select {
-    margin-top: 10px;
-    margin-right: 500px;
-    text-align: center;
-
+    display: inline-block;
 }
 
-.language-select select {
-    padding: 4px;
-    font-size: 1.2em;
-    background-color: #fff;
-    color: #004080;
-    border: 2px solid #004080;
-    border-radius: 5px;
-}
-
-/* Main content styling */
-main {
-    margin: 20px auto;
+.container {
     max-width: 600px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
 
-main h2 {
-    text-align: center;
-    margin-bottom: 20px;
+.form-group label {
+    font-weight: 500;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    font-size: 1.1em;
-    margin-bottom: 5px;
-}
-
-form input,
-form textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-form button {
-    padding: 5px;
-    background-color: #004080;
-    width: 150px;
-    margin-left: 200px;
-    color: white;
+button.btn {
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 5px 10px;
 }
 
-form button:hover {
+button.btn-sm {
+    width: auto;
+}
+
+.custom-button {
+    background-color: #004080;
+    border-color: #004080;
+    color: white;
+}
+
+.custom-button:hover {
     background-color: #0059b3;
+    border-color: #0059b3;
+    color: white;
 }
