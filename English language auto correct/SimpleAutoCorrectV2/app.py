@@ -17,7 +17,9 @@ def run_function():
         text = text.lower()
     data = speller.get_candidates(text)
 
-    corrected_text = data if data else 'correct'
+    corrected_text = data if data else [('word is correct!',0)]
+    print(corrected_text)
+    
     return render_template('index.html', corrected_text=corrected_text)
 
 if __name__ == "__main__":
