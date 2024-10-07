@@ -8,19 +8,28 @@ from AutoCorrect.typos import Word
 
 
 class Speller:
-    def __init__(self):
+    def __init__(self, threshold):
         self.frequency_dict = load_freq_dict_from_file("./data/output.json", "./data/eng_news_2005_10K-sentences.txt")
+        self.threshold = threshold  # return only most probable candidates
 
     def get_candidates(self, word):
         # if the word already in the frequency dict.keys() that means it is correct word no candidates
         # otherwise check for candidates
         if word in self.frequency_dict:
             return []
-        return [candidate for candidate in Word(word).candidates() if candidate in self.frequency_dict]
+
+        return sorted([(candidate, self.frequency_dict[candidate])
+                       for candidate in Word(word).candidates()
+                       if candidate in self.frequency_dict],
+                      key=lambda x: x[1],
+                      reverse=True)[:self.threshold]
 
 
 if __name__ == '__main__':
-    speller = Speller()
+    speller = Speller(threshold=1)
     print('input a word: ')
-    word = input()
-    print("possible corrections :", speller.get_candidates(word))
+    word = input().lower()
+
+    data = speller.get_candidates(word)
+    print("possible corrections :", data)
+
