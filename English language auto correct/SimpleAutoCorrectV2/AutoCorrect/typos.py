@@ -1,7 +1,7 @@
 # given a word make different collection of possible candidates
 from itertools import chain
+from AutoCorrect.constants import alphabet
 
-alphabet = "abcdefghijklmnopqrstuvwxyz"
 """
     ---sample usage---
     dict_of_words = {"mother"} # dictionary of english words
@@ -15,9 +15,11 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 
 class Word:
-    def __init__(self, word):
+    def __init__(self, word, lang):
+        self.lang = lang
         self.word = word
         self.slices = tuple((word[:i], word[i:]) for i in range(len(word) + 1))
+        self.lang_alphabet = alphabet[lang]
 
     def _delete(self):
         # generate words with one character delete
@@ -28,14 +30,14 @@ class Word:
     def _insert(self):
         # generate words with one character insert
         for a, b in self.slices:
-            for letter in alphabet:
+            for letter in self.lang_alphabet:
                 yield "".join((a, letter, b))
 
     def _replace(self):
         # generate words with one character delete
         for a, b in self.slices:
             if b:
-                for letter in alphabet:
+                for letter in self.lang_alphabet:
                     yield "".join((a, letter, b[1:]))
 
     def _transpose(self):
