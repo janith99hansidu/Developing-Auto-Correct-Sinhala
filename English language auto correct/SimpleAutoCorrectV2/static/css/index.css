@@ -1,0 +1,42 @@
+header {
+    background-color: #07325d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.language-select {
+    display: inline-block;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+button.btn {
+    border: none;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+button.btn-sm {
+    width: auto;
+}
+
+.custom-button {
+    background-color: #004080;
+    border-color: #004080;
+    color: white;
+}
+
+.custom-button:hover {
+    background-color: #0059b3;
+    border-color: #0059b3;
+    color: white;
+}

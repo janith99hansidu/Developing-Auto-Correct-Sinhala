@@ -23,13 +23,3 @@ class Speller:
                        if candidate in self.frequency_dict],
                       key=lambda x: x[1],
                       reverse=True)[:self.threshold]
-
-
-if __name__ == '__main__':
-    # set the threshold value to how many of most probable words that should return
-    threshold_value = 3
-    # create speller object to get candidates
-    speller = Speller(threshold_value)
-    print('input a word: ')
-    word = input().lower()
-    print("possible corrections :", speller.get_candidates(word))
