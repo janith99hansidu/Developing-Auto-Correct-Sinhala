@@ -23,7 +23,3 @@ class Speller:
                        if candidate in self.frequency_dict],
                       key=lambda x: x[1],
                       reverse=True)[:self.threshold]
-
-
-
-
