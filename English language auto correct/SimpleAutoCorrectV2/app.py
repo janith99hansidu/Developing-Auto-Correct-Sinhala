@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, jsonify
 
-from main import Speller
+from Speller import Speller
 
 app = Flask(__name__)
 
