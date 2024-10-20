@@ -29,5 +29,3 @@ Here’s an illustration of how English Auto Correct works:
 ![English Auto Correct Sample Correct Word](https://github.com/janith99hansidu/Developing-Auto-Correct-Sinhala/blob/main/src/sample_2.jpeg)
 
 ---
-
-Feel free to customize the content as needed, and ensure to include the actual image file in your repository with the correct path.
