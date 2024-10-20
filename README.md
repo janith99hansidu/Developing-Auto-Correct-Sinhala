@@ -25,7 +25,8 @@ Output: "apple"
 
 Here’s an illustration of how English Auto Correct works:
 
-![Auto Correct V2 Sample](sample_image.png)
+![English Auto Correct Sample Wrong Word](https://github.com/janith99hansidu/Developing-Auto-Correct-Sinhala/blob/main/src/sample_1.jpeg)
+![English Auto Correct Sample Correct Word](https://github.com/janith99hansidu/Developing-Auto-Correct-Sinhala/blob/main/src/sample_2.jpeg)
 
 ---
 
